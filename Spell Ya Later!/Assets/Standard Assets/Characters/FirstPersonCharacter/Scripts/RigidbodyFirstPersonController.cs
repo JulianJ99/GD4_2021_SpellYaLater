@@ -162,6 +162,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 if(m_IsGrounded){
                     m_RigidBody.drag = 5f;
+                    m_DoubleJumpPossible = false;
                 }
                 
 
@@ -175,6 +176,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     if(!m_DoubleJumpPossible){
                         advancedSettings.airControl = false;
                     }
+                    
                 }
 
                 if (!m_Jumping && Mathf.Abs(input.x) < float.Epsilon && Mathf.Abs(input.y) < float.Epsilon && m_RigidBody.velocity.magnitude < 1f)
@@ -266,6 +268,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (!m_PreviouslyGrounded && m_IsGrounded && m_Jumping)
             {
                 m_Jumping = false;
+
             }
         }
     }
