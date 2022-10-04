@@ -173,9 +173,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     m_RigidBody.AddForce(new Vector3(0f, movementSettings.JumpForce, 0f), ForceMode.Impulse);
                     m_Jumping = true;
                     m_DoubleJumpPossible = !m_DoubleJumpPossible;
-                    if(!m_DoubleJumpPossible){
-                        advancedSettings.airControl = false;
-                    }
+
                     
                 }
 
