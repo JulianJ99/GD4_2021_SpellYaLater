@@ -43,7 +43,7 @@ public class CameraMove : MonoBehaviour
         float z = Input.GetAxis("Vertical");
         moveVector = new Vector3(x, 0.0f, z) * moveSpeed;
 
-       
+        
     }
 
     private void FixedUpdate()
