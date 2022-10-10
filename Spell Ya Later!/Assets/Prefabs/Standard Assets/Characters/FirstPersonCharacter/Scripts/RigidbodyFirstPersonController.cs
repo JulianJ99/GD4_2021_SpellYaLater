@@ -6,15 +6,25 @@ namespace UnityStandardAssets.Characters.FirstPerson
 {
     [RequireComponent(typeof (Rigidbody))]
     [RequireComponent(typeof (CapsuleCollider))]
-    public class RigidbodyFirstPersonController : MonoBehaviour
+    public class RigidbodyFirstPersonController : PortalableObject
     {
+        public Quaternion TargetRotation { private set; get; }
+        private const float cameraSpeed = 3.0f;
+        
+        private float moveY = 0.0f;
+        
+
         [Serializable]
         public class MovementSettings
         {
+            
             public float ForwardSpeed = 8.0f;   // Speed when walking forward
             public float BackwardSpeed = 4.0f;  // Speed when walking backwards
-            public float StrafeSpeed = 4.0f;    // Speed when walking sideways
+            public float StrafeSpeed = 8.0f;    // Speed when walking sideways
             public float RunMultiplier = 2.0f;   // Speed when sprinting
+            
+            
+            
 	        public KeyCode RunKey = KeyCode.LeftShift;
             public float JumpForce = 30f;
             public AnimationCurve SlopeCurveModifier = new AnimationCurve(new Keyframe(-90.0f, 1.0f), new Keyframe(0.0f, 1.0f), new Keyframe(90.0f, 0.0f));
@@ -68,6 +78,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [Serializable]
         public class AdvancedSettings
         {
+            
             public float groundCheckDistance = 0.01f; // distance for checking if the controller is grounded ( 0.01f seems to work best for this )
             public float stickToGroundHelperDistance = 0.5f; // stops the character
             public float slowDownRate = 20f; // rate at which the controller comes to a stop when there is no input
@@ -118,6 +129,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         }
 
 
+
         private void Start()
         {
             m_RigidBody = GetComponent<Rigidbody>();
@@ -125,20 +137,47 @@ namespace UnityStandardAssets.Characters.FirstPerson
             mouseLook.Init (transform, cam.transform);
         }
 
+        private void Awake()
+        {
+            m_RigidBody = GetComponent<Rigidbody>();
+            Cursor.lockState = CursorLockMode.Locked;
+
+            TargetRotation = transform.rotation;
+        }
 
         private void Update()
         {
             RotateView();
+            float forwardSpeed = movementSettings.ForwardSpeed;
 
             if (CrossPlatformInputManager.GetButtonDown("Jump") && !m_Jump)
             {
                 m_Jump = true;
             }
+
+            // Rotate the camera.
+            var rotation = new Vector2(-Input.GetAxis("Mouse Y"), Input.GetAxis("Mouse X"));
+            var targetEuler = TargetRotation.eulerAngles + (Vector3)rotation * cameraSpeed;
+            if(targetEuler.x > 180.0f)
+            {
+                targetEuler.x -= 360.0f;
+            }
+            targetEuler.x = Mathf.Clamp(targetEuler.x, -75.0f, 75.0f);
+            TargetRotation = Quaternion.Euler(targetEuler);
+
+            transform.rotation = Quaternion.Slerp(transform.rotation, TargetRotation, 
+            Time.deltaTime * 15.0f);
+
+            // Move the camera.
+            float x = Input.GetAxis("Horizontal");
+            float z = Input.GetAxis("Vertical");
+           
         }
 
 
         private void FixedUpdate()
         {
+            float forwardSpeed = movementSettings.ForwardSpeed;
             GroundCheck();
             Vector2 input = GetInput();
 
@@ -193,6 +232,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jump = false;
         }
 
+            public void ResetTargetRotation()
+            {
+                TargetRotation = Quaternion.LookRotation(transform.forward, Vector3.up);
+            }
 
         private float SlopeMultiplier()
         {
@@ -269,5 +312,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             }
         }
+
+        public override void Warp()
+        {
+            base.Warp();
+            ResetTargetRotation();
+        }
+        
     }
+
+    
 }
