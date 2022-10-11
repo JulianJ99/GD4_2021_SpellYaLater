@@ -462,6 +462,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 961917061, guid: c0ca750e18564bf40963991f6c9954b6, type: 3}
+      propertyPath: portals.Array.data[0]
+      value: 
+      objectReference: {fileID: 414320175}
+    - target: {fileID: 961917061, guid: c0ca750e18564bf40963991f6c9954b6, type: 3}
+      propertyPath: portals.Array.data[1]
+      value: 
+      objectReference: {fileID: 1452771152}
     - target: {fileID: 4902475996440568473, guid: c0ca750e18564bf40963991f6c9954b6,
         type: 3}
       propertyPath: portals
@@ -472,21 +480,6 @@ PrefabInstance:
       propertyPath: crosshair
       value: 
       objectReference: {fileID: 156443236}
-    - target: {fileID: 4902475996440568473, guid: c0ca750e18564bf40963991f6c9954b6,
-        type: 3}
-      propertyPath: layerMask.m_Bits
-      value: 1537
-      objectReference: {fileID: 0}
-    - target: {fileID: 6609250295375982461, guid: c0ca750e18564bf40963991f6c9954b6,
-        type: 3}
-      propertyPath: m_Mass
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6609250295375982461, guid: c0ca750e18564bf40963991f6c9954b6,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6609250295380938815, guid: c0ca750e18564bf40963991f6c9954b6,
         type: 3}
       propertyPath: m_RootOrder
@@ -542,20 +535,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6609250295380970521, guid: c0ca750e18564bf40963991f6c9954b6,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 6609250295380970523, guid: c0ca750e18564bf40963991f6c9954b6,
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6609250295380970523, guid: c0ca750e18564bf40963991f6c9954b6,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0ca750e18564bf40963991f6c9954b6, type: 3}
@@ -640,68 +623,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab881504e307bbb40a3293bc7b62f3e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &961917054 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6609250295380970521, guid: c0ca750e18564bf40963991f6c9954b6,
-    type: 3}
-  m_PrefabInstance: {fileID: 872871607}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &961917060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 961917054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
---- !u!114 &961917061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 961917054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fca70876a90a47d46bc6e8fa42abc499, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  portals:
-  - {fileID: 414320175}
-  - {fileID: 1452771152}
-  portalCamera: {fileID: 1404714206}
-  iterations: 3
---- !u!20 &1404714206 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 5790015375732646470, guid: c0ca750e18564bf40963991f6c9954b6,
-    type: 3}
-  m_PrefabInstance: {fileID: 872871607}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1452771152 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9210734397624516433, guid: d66234c2b7828044d947dec754266dd0,
