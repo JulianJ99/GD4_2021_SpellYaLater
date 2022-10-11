@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(MeshFilter))]
 [RequireComponent(typeof(MeshRenderer))]
-[RequireComponent(typeof(UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController))]
+[RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Collider))]
 public class PortalableObject : MonoBehaviour
 {
@@ -15,7 +15,7 @@ public class PortalableObject : MonoBehaviour
     private Portal inPortal;
     private Portal outPortal;
 
-    private new UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController m_RigidBody;
+    private Rigidbody m_RigidBody;
     protected new Collider collider;
 
     private static readonly Quaternion halfTurn = Quaternion.Euler(0.0f, 180.0f, 0.0f);
@@ -31,7 +31,7 @@ public class PortalableObject : MonoBehaviour
         meshRenderer.materials = GetComponent<MeshRenderer>().materials;
         cloneObject.transform.localScale = transform.localScale;
 
-        
+        m_RigidBody = GetComponent<Rigidbody>();
         collider = GetComponent<Collider>();
     }
 
@@ -59,7 +59,6 @@ public class PortalableObject : MonoBehaviour
         }
         else
         {
-            
             cloneObject.transform.position = new Vector3(-1000.0f, 1000.0f, -1000.0f);
         }
     }
@@ -103,9 +102,9 @@ public class PortalableObject : MonoBehaviour
         transform.rotation = outTransform.rotation * relativeRot;
 
         // Update velocity of rigidbody.
-        //Vector3 relativeVel = inTransform.InverseTransformDirection(m_RigidBody.velocity);
-        //relativeVel = halfTurn * relativeVel;
-        //m_RigidBody.velocity = outTransform.TransformDirection(relativeVel);
+        Vector3 relativeVel = inTransform.InverseTransformDirection(m_RigidBody.velocity);
+        relativeVel = halfTurn * relativeVel;
+        m_RigidBody.velocity = outTransform.TransformDirection(relativeVel);
 
         // Swap portal references.
         var tmp = inPortal;

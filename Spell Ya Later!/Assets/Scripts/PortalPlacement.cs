@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController))]
+[RequireComponent(typeof(CameraMove))]
 public class PortalPlacement : MonoBehaviour
 {
     [SerializeField]
@@ -14,11 +14,11 @@ public class PortalPlacement : MonoBehaviour
     [SerializeField]
     private Crosshair crosshair;
 
-    private UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController rigidbodyFirstPersonController;
+    private CameraMove cameraMove;
 
     private void Awake()
     {
-        rigidbodyFirstPersonController = GetComponent<UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController>();
+        cameraMove = GetComponent<CameraMove>();
     }
 
     private void Update()
@@ -70,7 +70,7 @@ public class PortalPlacement : MonoBehaviour
             }
 
             // Orient the portal according to camera look direction and surface direction.
-            var cameraRotation = rigidbodyFirstPersonController.TargetRotation;
+            var cameraRotation = cameraMove.TargetRotation;
             var portalRight = cameraRotation * Vector3.right;
             
             if(Mathf.Abs(portalRight.x) >= Mathf.Abs(portalRight.z))
@@ -97,3 +97,4 @@ public class PortalPlacement : MonoBehaviour
         }
     }
 }
+
