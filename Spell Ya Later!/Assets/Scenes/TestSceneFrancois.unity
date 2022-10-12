@@ -375,6 +375,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &2004150841 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6609250295380970523, guid: c0ca750e18564bf40963991f6c9954b6, type: 3}
+  m_PrefabInstance: {fileID: 513853143}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2004150846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004150841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb64a50ca22d8fe488e653c62d734493, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2004150841}
 --- !u!1001 &1138616685901512000
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -382,6 +400,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1017944114740012325, guid: 17f9c05d3d79fce4cbb39f51b06ec42e, type: 3}
+      propertyPath: m_text
+      value: 00:00
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951551027171697517, guid: 17f9c05d3d79fce4cbb39f51b06ec42e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951551027171697517, guid: 17f9c05d3d79fce4cbb39f51b06ec42e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951551027171697517, guid: 17f9c05d3d79fce4cbb39f51b06ec42e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951551027171697517, guid: 17f9c05d3d79fce4cbb39f51b06ec42e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -28
+      objectReference: {fileID: 0}
     - target: {fileID: 3754969009285472092, guid: 17f9c05d3d79fce4cbb39f51b06ec42e, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -505,6 +543,14 @@ PrefabInstance:
     - target: {fileID: 6376403513935481982, guid: 17f9c05d3d79fce4cbb39f51b06ec42e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8437263715494102476, guid: 17f9c05d3d79fce4cbb39f51b06ec42e, type: 3}
+      propertyPath: timeRemaining
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 8437263715494102476, guid: 17f9c05d3d79fce4cbb39f51b06ec42e, type: 3}
+      propertyPath: timerIsRunning
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17f9c05d3d79fce4cbb39f51b06ec42e, type: 3}
