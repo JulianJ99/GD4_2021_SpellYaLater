@@ -16,10 +16,10 @@ public class PlayerDie : MonoBehaviour
     void Update()
     {
         if(player.transform.position.y < 0) {
-            SceneManager.LoadScene("fSchoolTest");
+            SceneManager.LoadScene("TestSceneJulian");
         }
         if (Input.GetKeyDown("r")) { 
-            SceneManager.LoadScene("fSchoolTest"); 
+            SceneManager.LoadScene("TestSceneJulian"); 
         } 
       
     }
