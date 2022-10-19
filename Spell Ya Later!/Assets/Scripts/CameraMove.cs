@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+[RequireComponent(typeof(Rigidbody))]
 public class CameraMove : MonoBehaviour
 {
     private const float moveSpeed = 7.5f;
@@ -10,20 +11,27 @@ public class CameraMove : MonoBehaviour
 
     public Quaternion TargetRotation { private set; get; }
     
+    private Vector3 moveVector = Vector3.zero;
 
 
+    private Rigidbody m_Rigidbody;
 
     private void Awake()
     {
-
+        m_Rigidbody = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
 
         TargetRotation = transform.rotation;
     }
 
+    private void FixedUpdate()
+    {
+
+    }
 
     public void ResetTargetRotation()
     {
         TargetRotation = Quaternion.LookRotation(transform.forward, Vector3.up);
     }
 }
+

@@ -14,6 +14,9 @@ public class PortalPlacement : MonoBehaviour
     [SerializeField]
     private Crosshair crosshair;
 
+    [SerializeField]
+    private Camera mainCamera;
+
     private CameraMove cameraMove;
 
     private void Awake()
@@ -36,7 +39,7 @@ public class PortalPlacement : MonoBehaviour
     private void FirePortal(int portalID, Vector3 pos, Vector3 dir, float distance)
     {
         RaycastHit hit;
-        Physics.Raycast(pos, dir, out hit, distance, layerMask);
+        Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hit, distance, layerMask);
 
         if(hit.collider != null)
         {
@@ -70,7 +73,7 @@ public class PortalPlacement : MonoBehaviour
             }
 
             // Orient the portal according to camera look direction and surface direction.
-            var cameraRotation = cameraMove.TargetRotation;
+            var cameraRotation = transform.rotation;
             var portalRight = cameraRotation * Vector3.right;
             
             if(Mathf.Abs(portalRight.x) >= Mathf.Abs(portalRight.z))
