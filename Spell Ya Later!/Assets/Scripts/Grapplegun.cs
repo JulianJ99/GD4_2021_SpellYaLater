@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class Grapplegun : MonoBehaviour
 {
@@ -11,10 +12,14 @@ public class Grapplegun : MonoBehaviour
     private float maxDistance = 100f;
     private SpringJoint joint;
 
+    private RigidbodyFirstPersonController rbfpc;
+
     void Awake() {
         lr = GetComponent<LineRenderer>();
     }
-
+    void Start(){
+       rbfpc = GetComponent<RigidbodyFirstPersonController>();
+    }
     void Update() {
         if (Input.GetMouseButtonDown(0)) {
             StartGrapple();
@@ -33,6 +38,7 @@ public class Grapplegun : MonoBehaviour
     /// Call whenever we want to start a grapple
     /// </summary>
     void StartGrapple() {
+        Debug.Log("test");
         RaycastHit hit;
         if (Physics.Raycast(camera.position, camera.forward, out hit, maxDistance, whatIsGrappleable)) {
             grapplePoint = hit.point;
@@ -43,13 +49,13 @@ public class Grapplegun : MonoBehaviour
             float distanceFromPoint = Vector3.Distance(player.position, grapplePoint);
 
             //The distance grapple will try to keep from grapple point. 
-            joint.maxDistance = distanceFromPoint * 0.8f;
+            joint.maxDistance = distanceFromPoint * 0.5f;
             joint.minDistance = distanceFromPoint * 0.25f;
 
             //Adjust these values to fit your game.
             joint.spring = 4.5f;
-            joint.damper = 7f;
-            joint.massScale = 4.5f;
+            joint.damper = 1.5f;
+            joint.massScale = 5.5f;
 
             lr.positionCount = 2;
             currentGrapplePosition = gunTip.position;
