@@ -24,6 +24,19 @@ public class CameraMove : MonoBehaviour
         TargetRotation = transform.rotation;
     }
 
+    private void Update(){
+        var rotation = new Vector2(-Input.GetAxis("Mouse Y"), Input.GetAxis("Mouse X"));
+        var targetEuler = TargetRotation.eulerAngles + (Vector3)rotation * cameraSpeed;
+        if(targetEuler.x > 180.0f)
+        {
+            targetEuler.x -= 360.0f;
+        }
+        targetEuler.x = Mathf.Clamp(targetEuler.x, -75.0f, 75.0f);
+        TargetRotation = Quaternion.Euler(targetEuler);
+
+
+    }
+
     private void FixedUpdate()
     {
 
@@ -32,6 +45,7 @@ public class CameraMove : MonoBehaviour
     public void ResetTargetRotation()
     {
         TargetRotation = Quaternion.LookRotation(transform.forward, Vector3.up);
+        Debug.Log("Target Rotation Reset");
     }
 }
 
