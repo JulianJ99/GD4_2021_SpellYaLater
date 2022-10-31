@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerDie : MonoBehaviour
 {
     public GameObject player;
+    public static Vector3 lastCheckpointPosition = new Vector3(-28, 11, 6);
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +17,7 @@ public class PlayerDie : MonoBehaviour
     void Update()
     {
         if(player.transform.position.y < 0) {
-            SceneManager.LoadScene("TestSceneJulian");
+            player.transform.position = lastCheckpointPosition;
         }
         if (Input.GetKeyDown("r")) { 
             SceneManager.LoadScene("TestSceneJulian"); 
