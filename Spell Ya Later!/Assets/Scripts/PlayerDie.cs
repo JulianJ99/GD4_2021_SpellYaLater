@@ -20,7 +20,7 @@ public class PlayerDie : MonoBehaviour
             player.transform.position = lastCheckpointPosition;
         }
         if (Input.GetKeyDown("r")) { 
-            SceneManager.LoadScene("TestSceneJulian"); 
+            player.transform.position = lastCheckpointPosition;
         } 
       
     }
