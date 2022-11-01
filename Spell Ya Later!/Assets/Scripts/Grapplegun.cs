@@ -78,6 +78,14 @@ public class Grapplegun : MonoBehaviour
         if (!joint) return;
 
         currentGrapplePosition = Vector3.Lerp(currentGrapplePosition, grapplePoint, Time.deltaTime * 8f);
+        float alpha = 1.0f;
+        Gradient gradient = new Gradient();
+        gradient.SetKeys(
+            new GradientColorKey[] { new GradientColorKey(Color.green, 0.0f), new GradientColorKey(Color.red, 1.0f) },
+            new GradientAlphaKey[] { new GradientAlphaKey(alpha, 0.0f), new GradientAlphaKey(alpha, 1.0f) }
+        );
+        lr.colorGradient = gradient;
+        lr.material.color = Color.green;
         
         lr.SetPosition(0, gunTip.position);
         lr.SetPosition(1, currentGrapplePosition);

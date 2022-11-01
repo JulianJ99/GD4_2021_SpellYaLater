@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6394102072695484085}
   - component: {fileID: 2326280461238595910}
   - component: {fileID: 2866190366415449464}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GrapplePoint (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 7144001407914949697}
   - component: {fileID: 3098469839839675351}
   - component: {fileID: 7007530111237672144}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GrapplePoint (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -252,7 +252,7 @@ GameObject:
   - component: {fileID: 8483429948764732971}
   - component: {fileID: 788515226602782028}
   - component: {fileID: 1271862160859005596}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GrapplePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +349,7 @@ GameObject:
   - component: {fileID: 2176622869748987539}
   - component: {fileID: 5255617942240869580}
   - component: {fileID: 8301686781421089151}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GrapplePoint (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -543,7 +543,7 @@ GameObject:
   - component: {fileID: 3932859057466038695}
   - component: {fileID: 2316615743290480390}
   - component: {fileID: 1151683010907558945}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GrapplePoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -640,7 +640,7 @@ GameObject:
   - component: {fileID: 7300283048915696878}
   - component: {fileID: 8863201881542762341}
   - component: {fileID: 8231475391906318948}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GrapplePoint (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -834,7 +834,7 @@ GameObject:
   - component: {fileID: 6671814460085954211}
   - component: {fileID: 6342481150247246116}
   - component: {fileID: 8590036380649752872}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GrapplePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
