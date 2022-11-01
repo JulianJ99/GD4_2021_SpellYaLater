@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerDie : MonoBehaviour
 {
     public GameObject player;
-    public static Vector3 lastCheckpointPosition = new Vector3(-28, 11, 6);
+    public static Vector3 lastCheckpointPosition = new Vector3(5, 4, -1293);
     // Start is called before the first frame update
     void Start()
     {
