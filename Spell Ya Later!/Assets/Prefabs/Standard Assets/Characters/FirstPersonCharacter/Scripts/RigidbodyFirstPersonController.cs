@@ -10,7 +10,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
     public class RigidbodyFirstPersonController : PortalableObject
     {
 
-        public CameraMove cameraMove;
+        private CameraMove cameraMove;
         [Serializable]
         public class MovementSettings
         {
@@ -125,7 +125,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
         }
 
+        protected override void Awake()
+        {
+            base.Awake();
 
+            cameraMove = GetComponent<CameraMove>();
+        }
 
         private void Start()
         {
@@ -283,6 +288,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public override void Warp()
         {
             base.Warp();
+            Debug.Log("Warp");
             cameraMove.ResetTargetRotation();
         }
         
