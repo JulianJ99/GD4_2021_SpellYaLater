@@ -11,6 +11,9 @@ public class Grapplegun : MonoBehaviour
     public Transform gunTip, camera, player;
     private float maxDistance = 100f;
     private SpringJoint joint;
+    public AudioClip GrappleSound;
+    public AudioSource PlayerSource;
+    private float GrapplePitch;
 
     private RigidbodyFirstPersonController rbfpc;
 
@@ -42,6 +45,7 @@ public class Grapplegun : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(camera.position, camera.forward, out hit, maxDistance, whatIsGrappleable)) {
             grapplePoint = hit.point;
+
             joint = player.gameObject.AddComponent<SpringJoint>();
             joint.autoConfigureConnectedAnchor = false;
             joint.connectedAnchor = grapplePoint;
@@ -76,7 +80,11 @@ public class Grapplegun : MonoBehaviour
     void DrawRope() {
         //If not grappling, don't draw rope
         if (!joint) return;
+        PlayerSource.clip = GrappleSound;
+        PlayerSource.pitch = GrapplePitch;
+        PlayerSource.PlayOneShot(PlayerSource.clip);
 
+        GrapplePitch = Random.Range(0.5f, 1.5f);
         currentGrapplePosition = Vector3.Lerp(currentGrapplePosition, grapplePoint, Time.deltaTime * 8f);
         float alpha = 1.0f;
         Gradient gradient = new Gradient();

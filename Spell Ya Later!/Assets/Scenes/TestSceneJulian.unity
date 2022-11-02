@@ -319,6 +319,12 @@ Camera:
     type: 3}
   m_PrefabInstance: {fileID: 9147581966251258184}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1662986794 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2687095871353127139, guid: 70a367b65e7632b4d8e096b309fe2392,
+    type: 3}
+  m_PrefabInstance: {fileID: 9147581966251258184}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1804265320 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9105664547487206456, guid: 70a367b65e7632b4d8e096b309fe2392,
@@ -487,6 +493,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 42
       objectReference: {fileID: 0}
+    - target: {fileID: 2687095871353127137, guid: 70a367b65e7632b4d8e096b309fe2392,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerSource
+      objectReference: {fileID: 0}
     - target: {fileID: 2687095872123207172, guid: 70a367b65e7632b4d8e096b309fe2392,
         type: 3}
       propertyPath: m_Enabled
@@ -499,9 +510,19 @@ PrefabInstance:
       objectReference: {fileID: 1330208312}
     - target: {fileID: 2687095872123207174, guid: 70a367b65e7632b4d8e096b309fe2392,
         type: 3}
+      propertyPath: Wind
+      value: 
+      objectReference: {fileID: 8300000, guid: 2b26cbea232414fcfab41a84fc7a1c55, type: 3}
+    - target: {fileID: 2687095872123207174, guid: 70a367b65e7632b4d8e096b309fe2392,
+        type: 3}
       propertyPath: cameraMove
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2687095872123207174, guid: 70a367b65e7632b4d8e096b309fe2392,
+        type: 3}
+      propertyPath: PlayerSource
+      value: 
+      objectReference: {fileID: 1662986794}
     - target: {fileID: 2687095872132549058, guid: 70a367b65e7632b4d8e096b309fe2392,
         type: 3}
       propertyPath: m_Depth
@@ -529,18 +550,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2687095872134158272, guid: 70a367b65e7632b4d8e096b309fe2392,
         type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2687095872134158272, guid: 70a367b65e7632b4d8e096b309fe2392,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.13
+      value: 51.13
       objectReference: {fileID: 0}
     - target: {fileID: 2687095872134158272, guid: 70a367b65e7632b4d8e096b309fe2392,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.51
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2687095872134158272, guid: 70a367b65e7632b4d8e096b309fe2392,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -525.56
+      value: 1061.17
       objectReference: {fileID: 0}
     - target: {fileID: 2687095872134158274, guid: 70a367b65e7632b4d8e096b309fe2392,
         type: 3}
@@ -602,6 +628,26 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1330208312}
+    - target: {fileID: 4250178297382708582, guid: 70a367b65e7632b4d8e096b309fe2392,
+        type: 3}
+      propertyPath: PlayerSource
+      value: 
+      objectReference: {fileID: 1662986794}
+    - target: {fileID: 4250178297382708582, guid: 70a367b65e7632b4d8e096b309fe2392,
+        type: 3}
+      propertyPath: PortalSound.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250178297382708582, guid: 70a367b65e7632b4d8e096b309fe2392,
+        type: 3}
+      propertyPath: PortalSound.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 304d546b80cae47fb872be812b98b2c8, type: 3}
+    - target: {fileID: 4250178297382708582, guid: 70a367b65e7632b4d8e096b309fe2392,
+        type: 3}
+      propertyPath: PortalSound.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: dddde2397affa4973880bcc238b6ad30, type: 3}
     - target: {fileID: 4445816012765375663, guid: 70a367b65e7632b4d8e096b309fe2392,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -959,9 +1005,64 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8782980690103421815, guid: 70a367b65e7632b4d8e096b309fe2392,
         type: 3}
+      propertyPath: crowdTimer
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 8782980690103421815, guid: 70a367b65e7632b4d8e096b309fe2392,
+        type: 3}
+      propertyPath: crowdSource
+      value: 
+      objectReference: {fileID: 9147581966251258185}
+    - target: {fileID: 8782980690103421815, guid: 70a367b65e7632b4d8e096b309fe2392,
+        type: 3}
       propertyPath: timeRemaining
       value: 300
       objectReference: {fileID: 0}
+    - target: {fileID: 8782980690103421815, guid: 70a367b65e7632b4d8e096b309fe2392,
+        type: 3}
+      propertyPath: crowd.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8782980690103421815, guid: 70a367b65e7632b4d8e096b309fe2392,
+        type: 3}
+      propertyPath: crowd.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: fceff2ea47fec1c4a86a364ac9ca376b, type: 3}
+    - target: {fileID: 8782980690103421815, guid: 70a367b65e7632b4d8e096b309fe2392,
+        type: 3}
+      propertyPath: crowd.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1a983e1131af44449a2c4fa7b0960eda, type: 3}
+    - target: {fileID: 8782980690103421815, guid: 70a367b65e7632b4d8e096b309fe2392,
+        type: 3}
+      propertyPath: crowd.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 58b532eb1c646964f87cb0fc394ac985, type: 3}
+    - target: {fileID: 8782980690103421815, guid: 70a367b65e7632b4d8e096b309fe2392,
+        type: 3}
+      propertyPath: crowd.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1b5da01b70713bf488eaaa05d1b44e95, type: 3}
+    - target: {fileID: 8782980690103421815, guid: 70a367b65e7632b4d8e096b309fe2392,
+        type: 3}
+      propertyPath: crowd.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8f45f24093837f04f8065868ee5ce092, type: 3}
+    - target: {fileID: 8782980690103421815, guid: 70a367b65e7632b4d8e096b309fe2392,
+        type: 3}
+      propertyPath: crowd.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3e4c4dd4a365e6f4cb89d4041fc48be7, type: 3}
+    - target: {fileID: 8782980690103421815, guid: 70a367b65e7632b4d8e096b309fe2392,
+        type: 3}
+      propertyPath: crowd.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6f828cacbe15f304095c24482f1b44bd, type: 3}
+    - target: {fileID: 8782980690103421815, guid: 70a367b65e7632b4d8e096b309fe2392,
+        type: 3}
+      propertyPath: crowd.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8f45f24093837f04f8065868ee5ce092, type: 3}
     - target: {fileID: 9105664546172213744, guid: 70a367b65e7632b4d8e096b309fe2392,
         type: 3}
       propertyPath: camera
@@ -972,6 +1073,16 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1857524991}
+    - target: {fileID: 9105664546172213744, guid: 70a367b65e7632b4d8e096b309fe2392,
+        type: 3}
+      propertyPath: GrappleSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 076c674d9627d49d7bc9428ecb754613, type: 3}
+    - target: {fileID: 9105664546172213744, guid: 70a367b65e7632b4d8e096b309fe2392,
+        type: 3}
+      propertyPath: PlayerSource
+      value: 
+      objectReference: {fileID: 1662986794}
     - target: {fileID: 9105664546172213745, guid: 70a367b65e7632b4d8e096b309fe2392,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1000,3 +1111,9 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 9105664546172213750, guid: 70a367b65e7632b4d8e096b309fe2392, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 70a367b65e7632b4d8e096b309fe2392, type: 3}
+--- !u!82 &9147581966251258185 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1493515727295743121, guid: 70a367b65e7632b4d8e096b309fe2392,
+    type: 3}
+  m_PrefabInstance: {fileID: 9147581966251258184}
+  m_PrefabAsset: {fileID: 0}

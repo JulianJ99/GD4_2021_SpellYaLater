@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
+using Random=UnityEngine.Random;
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
@@ -9,7 +10,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (CameraMove))]
     public class RigidbodyFirstPersonController : PortalableObject
     {
-
+        public int JumpCount = 0;
+        public AudioClip Wind;
+        public AudioSource PlayerSource;
+        public float WindPitch;
         private CameraMove cameraMove;
         [Serializable]
         public class MovementSettings
@@ -24,6 +28,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             
 	        public KeyCode RunKey = KeyCode.LeftShift;
             public float JumpForce = 30f;
+            
             public AnimationCurve SlopeCurveModifier = new AnimationCurve(new Keyframe(-90.0f, 1.0f), new Keyframe(0.0f, 1.0f), new Keyframe(90.0f, 0.0f));
             [HideInInspector] public float CurrentTargetSpeed = 8f;
 
@@ -134,6 +139,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void Start()
         {
+            WindPitch = Random.Range(1.0f, 1.5f);
             m_RigidBody = GetComponent<Rigidbody>();
             m_Capsule = GetComponent<CapsuleCollider>();
             mouseLook.Init (transform, cam.transform);
@@ -179,6 +185,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 if(m_IsGrounded){
                     m_RigidBody.drag = 5f;
                     m_DoubleJumpPossible = false;
+                    JumpCount = 0;
+                   
                 }
                 
 
@@ -188,6 +196,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     m_RigidBody.velocity = new Vector3(m_RigidBody.velocity.x, 0f, m_RigidBody.velocity.z);
                     m_RigidBody.AddForce(new Vector3(0f, movementSettings.JumpForce, 0f), ForceMode.Impulse);
                     m_Jumping = true;
+                    JumpCount ++;
+                    if(JumpCount == 2){
+                        PlayerSource.pitch = WindPitch;
+                        PlayerSource.PlayOneShot(Wind);
+                        WindPitch = Random.Range(1.0f, 1.5f);
+                        Debug.Log(WindPitch);
+                    }
                     m_DoubleJumpPossible = !m_DoubleJumpPossible;
 
                     
@@ -195,6 +210,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
                 if (!m_Jumping && Mathf.Abs(input.x) < float.Epsilon && Mathf.Abs(input.y) < float.Epsilon && m_RigidBody.velocity.magnitude < 1f)
                 {
+                    
                     m_RigidBody.Sleep();
                 }
             }

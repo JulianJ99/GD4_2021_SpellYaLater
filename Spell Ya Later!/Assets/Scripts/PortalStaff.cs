@@ -5,6 +5,8 @@ using UnityEngine;
 public class PortalStaff : MonoBehaviour
 {
     public GameObject PortalCanvas;
+    public AudioClip ItemClip;
+    public AudioSource PlayerSource;
 
     private void OnTriggerEnter(Collider other){
         if(other.gameObject.tag == "Player"){
@@ -12,6 +14,8 @@ public class PortalStaff : MonoBehaviour
             bhvr.enabled = true;
             PortalCanvas.SetActive(true);
             Destroy(gameObject);
+            PlayerSource.pitch = 1f;
+            PlayerSource.PlayOneShot(ItemClip);
         }
     }
 }

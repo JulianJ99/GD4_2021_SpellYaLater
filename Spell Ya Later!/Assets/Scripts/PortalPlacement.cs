@@ -19,6 +19,11 @@ public class PortalPlacement : MonoBehaviour
 
     private CameraMove cameraMove;
 
+    public AudioClip[] PortalSound;
+    public AudioSource PlayerSource;
+    private int selectPortalSound;
+    private float PortalPitch;
+
     private void Awake()
     {
         cameraMove = GetComponent<CameraMove>();
@@ -96,6 +101,12 @@ public class PortalPlacement : MonoBehaviour
             if(wasPlaced)
             {
                 crosshair.SetPortalPlaced(portalID, true);
+                PlayerSource.clip = PortalSound[selectPortalSound];
+                PlayerSource.pitch = PortalPitch;
+                PlayerSource.PlayOneShot(PlayerSource.clip);
+
+                PortalPitch = Random.Range(0.5f, 1.5f);
+                selectPortalSound = Random.Range(0, PortalSound.Length);  
             }
         }
     }
