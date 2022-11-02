@@ -18,6 +18,7 @@ public class PlayerDie : MonoBehaviour
     {
         if(player.transform.position.y < 0) {
             player.transform.position = lastCheckpointPosition;
+            //Grapplegun.StopGrapple();
         }
         if (Input.GetKeyDown("r")) { 
             player.transform.position = lastCheckpointPosition;
