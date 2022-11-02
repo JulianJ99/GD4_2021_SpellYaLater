@@ -437,6 +437,7 @@ MonoBehaviour:
   JumpCount: 0
   Wind: {fileID: 0}
   PlayerSource: {fileID: 0}
+  WindPitch: 0
   cam: {fileID: 6609250295380381245}
   movementSettings:
     ForwardSpeed: 8
