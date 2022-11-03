@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -223,6 +223,26 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: d36804b37c33cb746b9279f6c4e8d4ae, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae12250e58ccd4b4393f0f7c22f98c3b, type: 3}
+--- !u!1 &643899732 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2888207608067536984, guid: 70a367b65e7632b4d8e096b309fe2392,
+    type: 3}
+  m_PrefabInstance: {fileID: 9147581966251258184}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &643899736
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643899732}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7723336853861925065, guid: a4c98d11acc3f954a96d3e4712821118, type: 3}
 --- !u!4 &1330208306 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2687095872134158274, guid: 70a367b65e7632b4d8e096b309fe2392,
@@ -488,6 +508,12 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 19
       objectReference: {fileID: 0}
+    - target: {fileID: 2358765953774091288, guid: 70a367b65e7632b4d8e096b309fe2392,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8067726398312463513, guid: c554d83095df5054c87542b4f5e1484c,
+        type: 3}
     - target: {fileID: 2462442715615678829, guid: 70a367b65e7632b4d8e096b309fe2392,
         type: 3}
       propertyPath: m_RootOrder
@@ -743,6 +769,12 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 5071043841313797573, guid: 70a367b65e7632b4d8e096b309fe2392,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8067726398312463513, guid: c554d83095df5054c87542b4f5e1484c,
+        type: 3}
     - target: {fileID: 5351225556777050887, guid: 70a367b65e7632b4d8e096b309fe2392,
         type: 3}
       propertyPath: m_RootOrder
@@ -1129,6 +1161,16 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 49
       objectReference: {fileID: 0}
+    - target: {fileID: 8639021973231111180, guid: 70a367b65e7632b4d8e096b309fe2392,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8639021973231111180, guid: 70a367b65e7632b4d8e096b309fe2392,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 51.3
+      objectReference: {fileID: 0}
     - target: {fileID: 8654752188258189774, guid: 70a367b65e7632b4d8e096b309fe2392,
         type: 3}
       propertyPath: m_RootOrder
@@ -1203,6 +1245,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 39
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105425851280483211, guid: 70a367b65e7632b4d8e096b309fe2392,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105425851280483211, guid: 70a367b65e7632b4d8e096b309fe2392,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -29.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105425851280483211, guid: 70a367b65e7632b4d8e096b309fe2392,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105425851280483211, guid: 70a367b65e7632b4d8e096b309fe2392,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 99.26
       objectReference: {fileID: 0}
     - target: {fileID: 9105664546172213744, guid: 70a367b65e7632b4d8e096b309fe2392,
         type: 3}
