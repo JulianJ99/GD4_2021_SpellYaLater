@@ -9,7 +9,7 @@ public class Grapplegun : MonoBehaviour
     private Vector3 grapplePoint;
     public LayerMask whatIsGrappleable;
     public Transform gunTip, camera, player;
-    private float maxDistance = 150f;
+    private float maxDistance = 300f;
     private SpringJoint joint;
     public AudioClip GrappleSound;
     public AudioSource PlayerSource;
