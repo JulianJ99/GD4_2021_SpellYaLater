@@ -9,7 +9,7 @@ public class Grapplegun : MonoBehaviour
     private Vector3 grapplePoint;
     public LayerMask whatIsGrappleable;
     public Transform gunTip, camera, player;
-    private float maxDistance = 100f;
+    private float maxDistance = 150f;
     private SpringJoint joint;
     public AudioClip GrappleSound;
     public AudioSource PlayerSource;
@@ -41,7 +41,6 @@ public class Grapplegun : MonoBehaviour
     /// Call whenever we want to start a grapple
     /// </summary>
     void StartGrapple() {
-        Debug.Log("test");
         RaycastHit hit;
         if (Physics.Raycast(camera.position, camera.forward, out hit, maxDistance, whatIsGrappleable)) {
             grapplePoint = hit.point;
