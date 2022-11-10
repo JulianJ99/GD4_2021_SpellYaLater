@@ -45,7 +45,7 @@ public class Portal : MonoBehaviour
     private void Update()
     {
         Renderer.enabled = OtherPortal.IsPlaced;
-        Debug.Log(player.transform.position.y);
+        
         for (int i = 0; i < portalObjects.Count; ++i)
         {
             Vector3 objPos = transform.InverseTransformPoint(portalObjects[i].transform.position);
@@ -58,13 +58,13 @@ public class Portal : MonoBehaviour
 
             if(player.transform.position.y < 0.1){
                 RemovePortal();
-                Debug.Log("Removed");
+                
                 
             }
 
             if (Input.GetKeyDown("r")){
                 RemovePortal();
-                Debug.Log("Removed");
+                
             }
     }
 

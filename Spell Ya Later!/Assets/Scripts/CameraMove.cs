@@ -45,7 +45,7 @@ public class CameraMove : MonoBehaviour
     public void ResetTargetRotation()
     {
         TargetRotation = Quaternion.LookRotation(transform.forward, Vector3.up);
-        Debug.Log("Target Rotation Reset");
+        
     }
 }
 

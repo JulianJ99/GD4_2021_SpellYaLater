@@ -304,7 +304,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public override void Warp()
         {
             base.Warp();
-            Debug.Log("Warp");
+           
             cameraMove.ResetTargetRotation();
         }
         
