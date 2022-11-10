@@ -201,7 +201,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                         PlayerSource.pitch = WindPitch;
                         PlayerSource.PlayOneShot(Wind);
                         WindPitch = Random.Range(1.0f, 1.5f);
-                        Debug.Log(WindPitch);
+                        
                     }
                     m_DoubleJumpPossible = !m_DoubleJumpPossible;
 
