@@ -24,6 +24,9 @@ public class Grapplegun : MonoBehaviour
        rbfpc = GetComponent<RigidbodyFirstPersonController>();
     }
     void Update() {
+        if(player.transform.position.y < 0.2) {
+            StopGrapple();
+        }
         if (Input.GetKeyDown(KeyCode.E)) {
             StartGrapple();
         }
