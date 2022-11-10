@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class PlayerDie : MonoBehaviour
 {
     public GameObject player;
+
+
     public static Vector3 lastCheckpointPosition = new Vector3(5, 8, -1293);
     // Start is called before the first frame update
     void Start()
@@ -18,10 +20,11 @@ public class PlayerDie : MonoBehaviour
     {
         if(player.transform.position.y < 0) {
             player.transform.position = lastCheckpointPosition;
-            //Grapplegun.StopGrapple();
+
         }
         if (Input.GetKeyDown("r")) { 
             player.transform.position = lastCheckpointPosition;
+
         } 
       
     }

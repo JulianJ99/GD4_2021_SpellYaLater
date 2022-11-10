@@ -14,6 +14,8 @@ public class Crosshair : MonoBehaviour
     [SerializeField]
     private Image outPortalImg;
 
+    public Transform player;
+
     private void Start()
     {
         var portals = portalPair.Portals;
@@ -23,6 +25,18 @@ public class Crosshair : MonoBehaviour
 
         inPortalImg.gameObject.SetActive(false);
         outPortalImg.gameObject.SetActive(false);
+    }
+
+    private void Update(){
+        if(player.transform.position.y < 0.1){
+            inPortalImg.gameObject.SetActive(false);
+            outPortalImg.gameObject.SetActive(false);
+        }
+
+        if(Input.GetKeyDown("r")){
+            inPortalImg.gameObject.SetActive(false);
+            outPortalImg.gameObject.SetActive(false);
+        }
     }
 
     public void SetPortalPlaced(int portalID, bool isPlaced)

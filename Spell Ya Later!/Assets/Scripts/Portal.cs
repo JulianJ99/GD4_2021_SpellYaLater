@@ -27,6 +27,7 @@ public class Portal : MonoBehaviour
     // Components.
     public Renderer Renderer { get; private set; }
     private new BoxCollider collider;
+    public Transform player;
 
     private void Awake()
     {
@@ -44,7 +45,7 @@ public class Portal : MonoBehaviour
     private void Update()
     {
         Renderer.enabled = OtherPortal.IsPlaced;
-
+        Debug.Log(player.transform.position.y);
         for (int i = 0; i < portalObjects.Count; ++i)
         {
             Vector3 objPos = transform.InverseTransformPoint(portalObjects[i].transform.position);
@@ -54,6 +55,17 @@ public class Portal : MonoBehaviour
                 portalObjects[i].Warp();
             }
         }
+
+            if(player.transform.position.y < 0.1){
+                RemovePortal();
+                Debug.Log("Removed");
+                
+            }
+
+            if (Input.GetKeyDown("r")){
+                RemovePortal();
+                Debug.Log("Removed");
+            }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -215,4 +227,6 @@ public class Portal : MonoBehaviour
         gameObject.SetActive(false);
         IsPlaced = false;
     }
+
+
 }
